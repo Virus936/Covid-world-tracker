@@ -1,9 +1,11 @@
 import React from "react";
 import './CovidStat.css'
+import { casesTypeproperty } from './utils/utils'
 
 function Card({ covidcase, title, number, onClick }) {
+
   return (
-    <div className="covid-stat" value='qwe' onClick= {() => onClick(covidcase)} >
+    <div style={{borderColor:casesTypeproperty[covidcase].color }} className="covid-stat" value='qwe' onClick= {() => onClick(covidcase)} >
       <h1>{title}</h1>
       <p>{number?number.toLocaleString():0}</p>
     </div>

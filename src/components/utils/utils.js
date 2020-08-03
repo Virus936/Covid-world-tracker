@@ -7,4 +7,19 @@ const sortedData = (a,b)=>{
 }
 
 
+const deaths={
+  color:'red',
+  multiplier:2000
+}
+const cases={
+  color:'blue',
+  multiplier:800
+}
+const recovered={
+  color:'green',
+  multiplier:700
+}
+
+
 export default sortedData
+export const casesTypeproperty = { deaths, cases, recovered }

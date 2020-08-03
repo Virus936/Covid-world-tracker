@@ -67,7 +67,7 @@ function App() {
         covidstate={covidState}
         countryInfo={countryInfo}
       />
-      <Map country={countryInfo} />
+      <Map countries = {countriesInfo} country={countryInfo} covidcase={covidState} />
       <StatByCountry countriesInfo={countriesInfo} />
     </div>
   );
