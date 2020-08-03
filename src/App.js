@@ -63,7 +63,7 @@ function App() {
           onChangeCountry={onChangeCountry} />
       </header>
       <CovidStat handleClick={handleClick} covidstate={covidState} countryInfo={countryInfo} />
-      <Map position={[46.845, 2.878]} countries={countryInfo} />
+      <Map country={countryInfo} />
       <StatByCountry countriesInfo = {countriesInfo}/>
     </div>
   );
