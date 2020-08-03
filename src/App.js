@@ -15,19 +15,11 @@ function App() {
   const [countriesInfo, setCountriesInfo] = useState([]);
   const [covidState, setCovidState] = useState("deaths");
 
-  const sortedData = (a,b)=>{
-    if(a["deaths"] < b["deaths"])
-      return 1
-    if(a["deaths"] > b["deaths"])
-      return -1
-    return 0 
-  }
-
   const getCountriesList = async () => {
     const listcountry = await fetch( "https://disease.sh/v3/covid-19/countries")
       .then(function(res){
         const data = res.json()
-        data.then(value=> setCountriesInfo(value.sort(sortedData)))
+        data.then(value=> setCountriesInfo(value))
         return data
       })
       .then(data =>
@@ -43,6 +35,10 @@ function App() {
     const data = await fetch(url)
       .then(res=> res.json())
     setCountryInfo(data)
+  }
+
+  const handleClick = (covidcase) => {
+    setCovidState(covidcase)
   }
 
   useEffect(() => {
@@ -66,7 +62,7 @@ function App() {
           countries = {countries} 
           onChangeCountry={onChangeCountry} />
       </header>
-      <CovidStat mort={ countryInfo.deaths } malade={countryInfo.cases} retabli={countryInfo.recovered} />
+      <CovidStat handleClick={handleClick} covidstate={covidState} countryInfo={countryInfo} />
       <Map position={[46.845, 2.878]} countries={countryInfo} />
       <StatByCountry countriesInfo = {countriesInfo}/>
     </div>
