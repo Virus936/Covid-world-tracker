@@ -8,15 +8,15 @@ const sortedData = (a,b)=>{
 
 
 const deaths={
-  color:'red',
+  color:'lightcoral',
   multiplier:2000
 }
 const cases={
-  color:'blue',
+  color:'OrangeRed',
   multiplier:800
 }
 const recovered={
-  color:'green',
+  color:'lightgreen',
   multiplier:700
 }
 

@@ -3,6 +3,7 @@ import SelectCountry from "./components/SelectCountry";
 import CovidStat from "./components/CovidStat";
 import Map from "./components/Map";
 import StatByCountry from "./components/StatByCountry";
+import CovidChart from './components/CovidChart'
 
 import "leaflet/dist/leaflet.css";
 import "./App.css";
@@ -67,8 +68,13 @@ function App() {
         covidstate={covidState}
         countryInfo={countryInfo}
       />
-      <Map countries = {countriesInfo} country={countryInfo} covidcase={covidState} />
+      <Map
+        countries={countriesInfo}
+        country={countryInfo}
+        covidcase={covidState}
+      />
       <StatByCountry countriesInfo={countriesInfo} />
+      <CovidChart></CovidChart>
     </div>
   );
 }
